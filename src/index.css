@@ -7,6 +7,11 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
+  --color-light: #ccc;
+  --color-dark: #383838;
+  --loader-active: #bad7e9;
+  --loader-deactive: #bb9cc0;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -24,14 +29,52 @@ a:hover {
 
 body {
   margin: 0;
+  padding: 1rem;
   display: flex;
-  place-items: center;
+  justify-content: center;
+  /* place-items: center; */
   min-width: 320px;
   min-height: 100vh;
 }
 
+main {
+  display: flex;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  padding: 1rem;
+  width: 550px;
+  height: 500px;
+  border-radius: 10px;
+  gap: 10px;
+}
+
+.left {
+  width: 150px;
+  border: 1px solid var(--color-light);
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.right {
+  width: 350px;
+  border: 1px solid var(--color-light);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.top {
+  height: 350px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 h1 {
-  font-size: 3.2em;
+  font-size: 1.2em;
   line-height: 1.1;
 }
 
@@ -65,4 +108,21 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/*********/
+.loader1,
+.loader2,
+.loader3 {
+  border-radius: 50%;
+  animation: l1 4s infinite linear;
+}
+
+.loader1 {
+  width: 50px;
+  aspect-ratio: 1;
+  background: #bad7e9;
+  animation: l1 4s infinite linear;
+  top: -20%;
+  left: 25%;
 }
