@@ -35,7 +35,7 @@ main {
   background-color: var(--color-dark);
   color: var(--color-light);
   padding: 1rem;
-  width: 400px;
+  width: 600px;
   height: 500px;
   border-radius: 10px;
   box-shadow: inset 0 0 20px var(--color-light);
@@ -55,6 +55,7 @@ main {
   border: 1px solid var(--color-light);
   border-radius: 10px;
   padding: 1rem;
+  width: 95%;
 }
 
 .top {
@@ -113,15 +114,12 @@ h1 {
 }
 
 /*********/
-.loader1,
-.loader2,
-.loader3 {
+.step1,
+.step2,
+.step3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: solid 2px var(--color-purple);
-  background: transparent;
-  box-shadow: inset 0px 0px 30px 0px var(--color-purple);
   width: 50px;
   border-radius: 50%;
   aspect-ratio: 1;
@@ -129,21 +127,40 @@ h1 {
   font-size: 1rem;
   font-weight: 700;
   font-family: inherit;
+  border: solid 2px var(--color-purple);
+  background: transparent;
+  box-shadow: inset 0px 0px 30px 0px var(--color-purple);
 }
 
-.loader1 {
+.step1 {
   margin-top: 1rem;
   margin-bottom: 7.5rem;
   animation: l1 4s infinite linear;
 }
 
-.loader2 {
+.step2 {
   margin-bottom: 7.5rem;
   animation: l2 4s infinite linear;
 }
 
-.loader3 {
+.step3 {
   animation: l1 3s infinite linear;
+}
+
+.deactive {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: inherit;
+  border: solid 2px var(--color-pink);
+  background: transparent;
+  box-shadow: inset 0px 0px 30px 0px var(--color-pink);
 }
 
 /* @keyframes l1 {
