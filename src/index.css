@@ -88,6 +88,14 @@ h1 {
   padding: 1rem;
   max-width: 400px;
   text-align: justify;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.img {
+  display: flex;
+  justify-content: center;
 }
 
 .btn {
