@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Roboto", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -9,8 +9,11 @@
 
   --color-light: #ccc;
   --color-dark: #383838;
-  --loader-active: #bad7e9;
-  --loader-deactive: #bb9cc0;
+  --color-black: #252525;
+  --color-pink: #ffbdbd;
+  --color-purple: #c9c9ff;
+  --color-hover1: #f1cbff;
+  --color-hover2: #e1f7d5;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -18,21 +21,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
   padding: 1rem;
   display: flex;
   justify-content: center;
-  /* place-items: center; */
   min-width: 320px;
   min-height: 100vh;
 }
@@ -42,22 +35,23 @@ main {
   background-color: var(--color-dark);
   color: var(--color-light);
   padding: 1rem;
-  width: 550px;
+  width: 400px;
   height: 500px;
   border-radius: 10px;
+  box-shadow: inset 0 0 20px var(--color-light);
   gap: 10px;
 }
 
 .left {
-  width: 150px;
+  display: flex;
+  flex-direction: column;
+  width: 50px;
   border: 1px solid var(--color-light);
   border-radius: 10px;
   padding: 1rem;
-  text-align: center;
 }
 
 .right {
-  width: 350px;
   border: 1px solid var(--color-light);
   border-radius: 10px;
   padding: 1rem;
@@ -71,58 +65,131 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 1rem;
 }
 
 h1 {
-  font-size: 1.2em;
+  font-size: 1.6em;
   line-height: 1.1;
+  text-align: center;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.text {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  padding: 1rem;
+  max-width: 400px;
+  text-align: justify;
+}
+
+.btn {
+  padding: 15px 50px;
+  border: solid 2px var(--color-pink);
+  border-radius: 20px;
+  background: transparent;
+  color: var(--color-pink);
+  box-shadow: inset 0px 0px 30px 0px var(--color-pink);
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  margin-right: 10px;
+  font-size: 1rem;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.btn:hover {
+  color: var(--color-hover2);
+  border-color: var(--color-hover2);
+  box-shadow: inset 0px 0px 30px 0px var(--color-hover2);
+}
+
+.btn-purple {
+  color: var(--color-purple);
+  border-color: var(--color-purple);
+  box-shadow: inset 0px 0px 30px 0px var(--color-purple);
+}
+
+.btn-purple:hover {
+  color: var(--color-hover1);
+  border: solid 2px var(--color-hover1);
+  box-shadow: inset 0px 0px 50px 0px var(--color-hover1);
 }
 
 /*********/
 .loader1,
 .loader2,
 .loader3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 2px var(--color-purple);
+  background: transparent;
+  box-shadow: inset 0px 0px 30px 0px var(--color-purple);
+  width: 50px;
   border-radius: 50%;
-  animation: l1 4s infinite linear;
+  aspect-ratio: 1;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: inherit;
 }
 
 .loader1 {
-  width: 50px;
-  aspect-ratio: 1;
-  background: #bad7e9;
+  margin-top: 1rem;
+  margin-bottom: 7.5rem;
   animation: l1 4s infinite linear;
-  top: -20%;
-  left: 25%;
 }
+
+.loader2 {
+  margin-bottom: 7.5rem;
+  animation: l2 4s infinite linear;
+}
+
+.loader3 {
+  animation: l1 3s infinite linear;
+}
+
+/* @keyframes l1 {
+  12.5% {
+    border-radius: 37% 63% 70% 30% / 30% 62% 38% 70%;
+  }
+  25% {
+    border-radius: 50% 50% 70% 30% / 52% 62% 38% 48%;
+  }
+  37.5% {
+    border-radius: 33% 67% 18% 82% / 52% 75% 25% 48%;
+  }
+  50% {
+    border-radius: 73% 27% 18% 82% / 52% 32% 68% 48%;
+  }
+  62.5% {
+    border-radius: 73% 27% 74% 26% / 64% 32% 68% 36%;
+  }
+  75% {
+    border-radius: 84% 16% 15% 85% / 55% 79% 21% 45%;
+  }
+  87.5% {
+    border-radius: 12% 88% 69% 31% / 10% 66% 34% 90%;
+  }
+}
+
+@keyframes l2 {
+  12.5% {
+    border-radius: 37% 23% 70% 30% / 30% 23% 38% 70%;
+  }
+  25% {
+    border-radius: 50% 50% 70% 30% / 52% 62% 38% 48%;
+  }
+  37.5% {
+    border-radius: 33% 67% 18% 82% / 52% 75% 25% 48%;
+  }
+  50% {
+    border-radius: 73% 27% 18% 82% / 52% 32% 68% 48%;
+  }
+  62.5% {
+    border-radius: 73% 27% 74% 26% / 64% 32% 68% 36%;
+  }
+  75% {
+    border-radius: 84% 16% 15% 85% / 55% 79% 21% 45%;
+  }
+  87.5% {
+    border-radius: 12% 88% 69% 31% / 10% 66% 34% 90%;
+  }
+} */
