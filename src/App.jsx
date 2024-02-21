@@ -21,6 +21,7 @@ function App() {
 
 function Main() {
   const [step, setStep] = useState(0);
+  // const [isOpen, setIsOpen] = useState(true);
 
   function handleNext() {
     if (step < 3) {
@@ -35,33 +36,41 @@ function Main() {
     }
   }
 
+  // function handleOpen() {
+  //   setIsOpen(!isOpen);
+  // }
+
   return (
-    <main>
-      <section className="left">
-        <p className={`${step >= 1 ? "step1" : "step1 deactive"}`}>1</p>
-        <p className={`${step >= 2 ? "step2" : "step2 deactive"}`}>2</p>
-        <p className={`${step >= 3 ? "step3" : "step3 deactive"}`}>3</p>
-      </section>
-      <section className="right">
-        <section className="top">
-          <div>
+    <div>
+      {/* <button className="close" onClick={handleOpen}>
+        ✖
+      </button> */}
+
+      <main>
+        <section className="left">
+          <p className={`${step >= 1 ? "step1" : "step1 deactive"}`}>1</p>
+          <p className={`${step >= 2 ? "step2" : "step2 deactive"}`}>2</p>
+          <p className={`${step >= 3 ? "step3" : "step3 deactive"}`}>3</p>
+        </section>
+        <section className="right">
+          <section className="top">
             <h1>3 Steps to be a web developer:</h1>
-            <button className="close">✖</button>
-          </div>
-          <p className="text">
-            <pre>{msg[step - 1]}</pre>
-          </p>
+
+            <p className="text">
+              <pre>{msg[step - 1]}</pre>
+            </p>
+          </section>
+          <section className="buttons">
+            <button className="btn btn-purple" onClick={handlePrev}>
+              &#8249;
+            </button>
+            <button className="btn btn-purple" onClick={handleNext}>
+              &#8250;
+            </button>
+          </section>
         </section>
-        <section className="buttons">
-          <button className="btn btn-purple" onClick={handlePrev}>
-            &#8249;
-          </button>
-          <button className="btn btn-purple" onClick={handleNext}>
-            &#8250;
-          </button>
-        </section>
-      </section>
-    </main>
+      </main>
+    </div>
   );
 }
 
