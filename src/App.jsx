@@ -43,22 +43,23 @@ function Main() {
         <p className={`${step >= 3 ? "step3" : "step3 deactive"}`}>3</p>
       </section>
       <section className="right">
-        <div>
-          <section className="top">
+        <section className="top">
+          <div>
             <h1>3 Steps to be a web developer:</h1>
-            <p className="text">
-              <pre>{msg[step - 1]}</pre>
-            </p>
-          </section>
-          <section className="buttons">
-            <button className="btn btn-purple" onClick={handlePrev}>
-              &#8249;
-            </button>
-            <button className="btn btn-purple" onClick={handleNext}>
-              &#8250;
-            </button>
-          </section>
-        </div>
+            <button className="close">✖</button>
+          </div>
+          <p className="text">
+            <pre>{msg[step - 1]}</pre>
+          </p>
+        </section>
+        <section className="buttons">
+          <button className="btn btn-purple" onClick={handlePrev}>
+            &#8249;
+          </button>
+          <button className="btn btn-purple" onClick={handleNext}>
+            &#8250;
+          </button>
+        </section>
       </section>
     </main>
   );
