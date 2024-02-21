@@ -58,11 +58,10 @@ function Main() {
             <p className="text">
               <pre>{msg[step - 1]}</pre>
             </p>
-            <div className="img">
-              <img src="./public/1.png" alt="" width="250px" />
-            </div>
           </section>
-
+          <section className="img">
+            <img src="./public/1.png" alt="" width="250px" />
+          </section>
           <section className="buttons">
             <button className="btn btn-purple" onClick={handlePrev}>
               &#8249;
