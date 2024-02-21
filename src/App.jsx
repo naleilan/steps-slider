@@ -48,9 +48,15 @@ function Main() {
 
       <main>
         <section className="left">
-          <p className={`${step >= 1 ? "step1" : "step1 deactive"}`}>1</p>
-          <p className={`${step >= 2 ? "step2" : "step2 deactive"}`}>2</p>
-          <p className={`${step >= 3 ? "step3" : "step3 deactive"}`}>3</p>
+          <p className={`${step >= 1 ? "step1" : "step1 deactive"}`}>
+            {step >= 1 ? "✔" : "1"}
+          </p>
+          <p className={`${step >= 2 ? "step2" : "step2 deactive"}`}>
+            {step >= 2 ? "✔" : "2"}
+          </p>
+          <p className={`${step >= 3 ? "step3" : "step3 deactive"}`}>
+            {step >= 3 ? "✔" : "3"}
+          </p>
         </section>
         <section className="right">
           <section className="top">
