@@ -66,7 +66,7 @@ function Main() {
             </p>
           </section>
           <section className="img">
-            <img src="./public/1.png" alt="" width="250px" />
+            <img src="img/1.png" alt="" width="250px" />
           </section>
           <section className="buttons">
             <button className="btn btn-purple" onClick={handlePrev}>
